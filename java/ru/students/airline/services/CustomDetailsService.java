@@ -15,8 +15,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CustomDetailsService implements UserDetailsService {//наследуемся от базового класса UserDetailsService framework
 
+    // методы для работы с данными пользователей
     private final UsersRepo usersRepo;
 
+    // загрузка данных пользователя по имени
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> user = usersRepo.findByUsername(username);
